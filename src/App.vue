@@ -1,26 +1,46 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="header">
+    <headerComponent class="container" />
+  </div>
+  <div class="nav">
+    <navigationComponent class="container" />
+  </div>
+  <div class="home" id="home">
+    <homeComponent class="container" />
+  </div>
+  <div class="aboutus" id="aboutus">
+    <aboutusComponent class="container" />
+  </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import headerComponent from "@/components/HeaderComponent.vue";
+import navigationComponent from "@/components/NavigationComponent.vue";
+import homeComponent from "@/components/HomeComponent.vue";
+import aboutusComponent from "@/components/AboutusComponent.vue";
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    headerComponent,
+    navigationComponent,
+    homeComponent,
+    aboutusComponent,
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+.header {
+  background: #ffffff;
+  padding-top: 8px;
+  padding-bottom: 9px;
+}
+.nav {
+  background: #313131;
+  padding-bottom: 24px;
+}
+.home {
+  background: #ef7b3e;
+  padding-bottom: 172px;
+}
+.aboutus {
+  background: #ffffff;
 }
 </style>
