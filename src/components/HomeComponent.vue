@@ -10,10 +10,13 @@
           USA & Canada specializes in providing world class prep solutions for
           your Amazon FBA business.
         </p>
-        <button class="home-section__btn"><p>Contact Us</p></button>
+        <button class="home-section__btn">Contact Us</button>
       </div>
       <div class="home-section__picture">
-        <img src="../assets/img/home/secondHomeImg.png" />
+        <img
+          class="home-section__picture"
+          src="../assets/img/home/secondHomeImg.png"
+        />
       </div>
     </div>
   </div>
@@ -31,6 +34,7 @@ export default {
   .firstImg {
     position: absolute;
     margin-left: -240px;
+    pointer-events: none;
   }
   &__block {
     display: flex;
@@ -71,19 +75,19 @@ export default {
     border: none;
     background: #ffffff;
     cursor: pointer;
-    p {
-      font-size: 16px;
-      font-weight: 600;
-      font-family: "Poppins";
-      line-height: 24px;
-      color: #ef7b3e;
-    }
+    color: #ef7b3e;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Poppins";
+    line-height: 24px;
   }
   &__picture {
     img {
       position: absolute;
       padding-left: 130px;
       margin-top: -7px;
+      user-select: none;
+      pointer-events: none;
     }
   }
 }

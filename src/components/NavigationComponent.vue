@@ -1,15 +1,15 @@
 <template>
   <div class="navigation">
     <div class="image">
-      <img class="image__first" src="../assets/img/nav/Vector 1.png" />
-      <img class="image__second" src="../assets/img/nav/empire.png" />
+      <img class="image__first" src="../assets/img/nav/firstNav.png" />
+      <img class="image__second" src="../assets/img/nav/secondNav.png" />
     </div>
     <ul class="service">
       <li @click="scrollBlock('home')">Home</li>
       <li @click="scrollBlock('aboutus')">About us</li>
-      <li>Our Services</li>
-      <li>Our Team</li>
-      <li>Contact us</li>
+      <li @click="scrollBlock('ourservices')">Our Services</li>
+      <li @click="scrollBlock('ourteam')">Our Team</li>
+      <li @click="scrollBlock('footer')">Contact us</li>
     </ul>
   </div>
 </template>
@@ -20,16 +20,15 @@ export default {
   data() {
     return {};
   },
-      methods: {
+  methods: {
     scrollBlock(id) {
       document.getElementById(id).scrollIntoView({
         behavior: "smooth",
-        block: "start",
+        block: "center",
       });
     },
-  }
+  },
 };
-
 </script>
 
 <style lang="scss" scoped>
@@ -42,6 +41,7 @@ export default {
   img {
     position: absolute;
     margin-left: 145px;
+    pointer-events: none;
   }
 }
 .service {

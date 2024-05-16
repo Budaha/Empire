@@ -6,7 +6,10 @@
       <div class="about-section__text"><p>FBA Prep Services</p></div>
     </div>
     <div class="about-section__info">
-      <h3 class="name">about us</h3>
+      <div class="block">
+        <div class="line" />
+        <h3 class="name">about us</h3>
+      </div>
       <h1 class="title">WHAT WE DO</h1>
       <h4 class="descr">
         Empire FBA Prep Services In USA &Canada specializes in providing world
@@ -60,11 +63,12 @@ export default {
 <style lang="scss" scoped>
 .about-section {
   display: flex;
+  padding-top: 108px;
   &__image {
     position: relative;
     max-width: 650px;
+    pointer-events: none;
     img {
-      padding-top: 108px;
       padding-left: 11px;
     }
   }
@@ -72,7 +76,7 @@ export default {
     max-width: 150px;
     position: absolute;
     right: 60px;
-    top: 206px;
+    top: 98px;
     text-align: center;
     font-size: 38px;
     font-weight: 700;
@@ -85,7 +89,7 @@ export default {
       max-width: 150px;
       position: absolute;
       right: 72px;
-      top: 300px;
+      top: 192px;
       font-family: "Lato";
       font-size: 16px;
       line-height: 25px;
@@ -94,6 +98,14 @@ export default {
   }
   &__info {
     margin-left: 85px;
+    .line {
+      width: 46px;
+      border-bottom: 2px solid #ef7b3e;
+      margin-bottom: 7px;
+    }
+    .block {
+      display: flex;
+    }
     .name {
       font-weight: 700;
       font-size: 18px;
@@ -101,8 +113,7 @@ export default {
       color: #ef7b3e;
       font-family: "Poppins";
       text-transform: uppercase;
-      padding-top: 116px;
-      padding-left: 46px;
+      padding-top: 8px;
     }
     .title {
       font-size: 40px;
@@ -135,6 +146,9 @@ export default {
       &:first-child {
         margin-top: 70px;
       }
+      img {
+        pointer-events: none;
+      }
     }
     .text {
       padding-left: 18px;
@@ -144,6 +158,7 @@ export default {
         line-height: 25px;
         font-family: "Poppins";
         color: #000000;
+        text-transform: uppercase;
       }
       p {
         font-size: 15px;

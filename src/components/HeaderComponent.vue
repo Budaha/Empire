@@ -14,7 +14,7 @@
       <img src="../assets/img/header/phone.png" />
       <p class="phone__text">1 (877) 618-0069</p>
     </div>
-    <button class="btn"><p class="btn__text">Book Now</p></button>
+    <button class="btn">Book Now</button>
   </div>
 </template>
 
@@ -84,12 +84,10 @@ img {
   border: none;
   margin-right: 146px;
   margin-top: 4px;
-  &__text {
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 10px;
-    font-family: "Poppins";
-  }
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 10px;
+  font-family: "Poppins";
 }
 </style>
