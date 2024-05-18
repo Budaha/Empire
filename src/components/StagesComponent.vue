@@ -1,53 +1,82 @@
 <template>
   <div class="stages-section">
-    <div class="stages-section__block">
-      <h1 class="stages-section__title">GET STARTED FOR AS LOW AS $0.50</h1>
-      <p class="stages-section__descr">
-        How it works: Complete our service request form and provide all the
-        required details.
-      </p>
-      <p class="stages-section__text">
-        Once you are ready, send your products and custom packaging directly
-        from your manufacturer or wholesaler to one of our three prep centers.
-        Create an abbreviated shipping plan and grant Empire FBA Prep Services
-        limited secure access via the Assistant Account on Amazon.
-      </p>
+    <div
+      class="stages-section__block"
+      v-for="(block, index) in blocks"
+      :key="index"
+    >
+      <h1 class="stages-section__title">{{ block.title }}</h1>
+      <p class="stages-section__descr">{{ block.description }}</p>
+      <p class="stages-section__text">{{ block.text }}</p>
       <button class="btn">SEND A SHIPMENT FORM</button>
     </div>
     <div class="stages-section__item">
-      <div class="el">
-        <img src="../assets/img/stages/firstStages.png" />
-        <h2 class="title">CREATE AN ABBREVITED SHIPPING PLAN</h2>
+      <div class="el" v-for="(item, index) in items" :key="index">
+        <img :src="item.img" />
+        <h2 class="title">{{ item.title }}</h2>
         <p class="descr">
-          Create a new shipping plan in Seller Central. List the products you
-          are sending along with quantities and then you are done!
+          {{ item.description }}
         </p>
-      </div>
-      <img class="arrow arrow--1" src="../assets/img/stages/fourStages.png" />
-      <div class="el">
-        <img src="../assets/img/stages/secondStages.png" />
-        <h2 class="title">SEND US YOUR INSTRUCTION</h2>
-        <p class="descr">
-          Complete our service request form with detailed instructions or
-          anything special you’d like for us to do.
-        </p>
-      </div>
-      <img class="arrow arrow--2" src="../assets/img/stages/fiveStages.png" />
-      <div class="el">
-        <img src="../assets/img/stages/threeStages.png" />
-        <h2 class="title">WE’LL TAKE IT FROM THERE</h2>
-        <p class="descr">
-          Using your input our experts will carefully prepare your shipment
-          start to finish with impeccable care and attention to detail.
-        </p>
+        <img
+          v-if="index === 0"
+          :class="`arrow arrow--${index + 1}`"
+          src="../assets/img/stages/fourStages.png"
+        />
+        <img
+          v-if="index === 1"
+          :class="`arrow arrow--${index + 1}`"
+          src="../assets/img/stages/fiveStages.png"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { ref } from "vue";
+import firstStages from "../assets/img/stages/firstStages.png";
+import secondStages from "../assets/img/stages/secondStages.png";
+import threeStages from "../assets/img/stages/threeStages.png";
 export default {
   name: "stagesComponent",
+  setup() {
+    const blocks = ref([
+      {
+        id: 1,
+        title: "GET STARTED FOR AS LOW AS $0.50",
+        description:
+          "How it works: Complete our service request form and provide all the required details.",
+        text: "Once you are ready, send your products and custom packaging directly from your manufacturer or wholesaler to one of our three prep centers. Create an abbreviated shipping plan and grant Empire FBA Prep Services limited secure access via the Assistant Account on Amazon.",
+      },
+    ]);
+    const items = ref([
+      {
+        id: 1,
+        title: "CREATE AN ABBREVITED SHIPPING PLAN",
+        description:
+          "Create a new shipping plan in Seller Central. List the products you are sending along with quantities and then you are done!",
+        img: firstStages,
+      },
+      {
+        id: 2,
+        title: "SEND US YOUR INSTRUCTION",
+        description:
+          "Complete our service request form with detailed instructions or anything special you’d like for us to do.",
+        img: secondStages,
+      },
+      {
+        id: 3,
+        title: "WE’LL TAKE IT FROM THERE",
+        description:
+          "Using your input our experts will carefully prepare your shipment start to finish with impeccable care and attention to detail.",
+        img: threeStages,
+      },
+    ]);
+    return {
+      items,
+      blocks,
+    };
+  },
 };
 </script>
 
@@ -145,11 +174,14 @@ export default {
       z-index: 2;
       position: absolute;
       pointer-events: none;
+      display: none;
       &--1 {
+        display: flex;
         left: 217px;
         top: 11px;
       }
       &--2 {
+        display: flex;
         right: 210px;
         top: 50px;
       }

@@ -17,16 +17,16 @@
 <script>
 export default {
   name: "navigationComponent",
-  data() {
-    return {};
-  },
-  methods: {
-    scrollBlock(id) {
+  setup() {
+    const scrollBlock = (id) => {
       document.getElementById(id).scrollIntoView({
         behavior: "smooth",
         block: "center",
       });
-    },
+    };
+    return {
+      scrollBlock,
+    };
   },
 };
 </script>
@@ -60,6 +60,9 @@ export default {
     &:last-child {
       margin-right: 118px;
     }
+  }
+  li:hover {
+    color: #ef7b3e;
   }
 }
 </style>

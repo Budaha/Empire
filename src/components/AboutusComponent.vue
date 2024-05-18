@@ -2,11 +2,11 @@
   <div class="about-section">
     <div class="about-section__image">
       <img src="../assets/img/about/image.png" />
-      <h1 class="about-section__title">HIGH Quality</h1>
-      <div class="about-section__text"><p>FBA Prep Services</p></div>
+      <h1 class="about-section__title-img">HIGH Quality</h1>
+      <div class="about-section__text-img"><p>FBA Prep Services</p></div>
     </div>
     <div class="about-section__info">
-      <div class="block">
+      <div class="block-name">
         <div class="line" />
         <h3 class="name">about us</h3>
       </div>
@@ -16,37 +16,11 @@
         class prep solutions for your Amazon FBA business.
       </h4>
       <div class="about-section__info-grid">
-        <div class="element">
-          <img src="../assets/img/about/grid1.png" />
+        <div class="element" v-for="(element, index) in elements" :key="index">
+          <img :src="element.img" />
           <div class="text">
-            <h1>RECEIVE YOUR INVENTORY</h1>
-            <p>
-              Send your products, packaging and inserts directly to one of our
-              three locations strategically located in California, New York or
-              Toronto Canada
-            </p>
-          </div>
-        </div>
-        <div class="element">
-          <img src="../assets/img/about/grid2.png" />
-          <div class="text">
-            <h1>PREP AND LABEL</h1>
-            <p>
-              Our team will inspect all items before carefully wrapping, adding
-              inserts, packing and attaching all the necessary labels required
-              for delivery and receipt by Amazon
-            </p>
-          </div>
-        </div>
-        <div class="element">
-          <img src="../assets/img/about/grid3.png" />
-          <div class="text">
-            <h1>SHIP TO AMAZON</h1>
-            <p>
-              Our staff of trained experts will complete your shipping plan,
-              arrange pickup and delivery directly to your assigned Amazon
-              fulfillment center
-            </p>
+            <h1>{{ element.title }}</h1>
+            <p>{{ element.description }}</p>
           </div>
         </div>
       </div>
@@ -55,8 +29,40 @@
 </template>
 
 <script>
+import { ref } from "vue";
+import grid1 from "../assets/img/about/grid1.png";
+import grid2 from "../assets/img/about/grid2.png";
+import grid3 from "../assets/img/about/grid3.png";
 export default {
   name: "aboutusComponent",
+  setup() {
+    const elements = ref([
+      {
+        id: 1,
+        img: grid1,
+        title: "RECEIVE YOUR INVENTORY",
+        description:
+          "Send your products, packaging and inserts directly to one of our three locations strategically located in California, New York or Toronto Canada",
+      },
+      {
+        id: 2,
+        img: grid2,
+        title: "PREP AND LABEL",
+        description:
+          "Our team will inspect all items before carefully wrapping, adding inserts, packing and attaching all the necessary labels required for delivery and receipt by Amazon",
+      },
+      {
+        id: 3,
+        img: grid3,
+        title: "SHIP TO AMAZON",
+        description:
+          "Our staff of trained experts will complete your shipping plan, arrange pickup and delivery directly to your assigned Amazon fulfillment center",
+      },
+    ]);
+    return {
+      elements,
+    };
+  },
 };
 </script>
 
@@ -72,7 +78,7 @@ export default {
       padding-left: 11px;
     }
   }
-  &__title {
+  &__title-img {
     max-width: 150px;
     position: absolute;
     right: 60px;
@@ -84,7 +90,7 @@ export default {
     line-height: 45px;
     color: #ffffff;
   }
-  &__text {
+  &__text-img {
     p {
       max-width: 150px;
       position: absolute;
@@ -103,7 +109,7 @@ export default {
       border-bottom: 2px solid #ef7b3e;
       margin-bottom: 7px;
     }
-    .block {
+    .block-name {
       display: flex;
     }
     .name {

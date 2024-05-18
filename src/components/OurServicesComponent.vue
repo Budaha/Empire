@@ -11,34 +11,10 @@
       </p>
     </div>
     <div class="ourservice-section__service">
-      <div class="cards">
-        <img src="../assets/img/ourservices/labeling.png" />
-        <h1 class="title">Labeling</h1>
-        <p class="descr">
-          Every unit, carton and pallet will be labeled by us as required. Rest
-          easy knowing your shipments will arrive at their designated
-          fulfillment centers as scheduled and on time
-        </p>
-        <button class="btn"><p>READ MORE</p></button>
-      </div>
-      <div class="cards">
-        <img src="../assets/img/ourservices/bubble.png" />
-        <h1 class="title">Bubble Wrap</h1>
-        <p class="descr">
-          It’s crucial for inventory to arrive in pristine condition. All items
-          will be carefully bubble wrapped and poly bagged as necessary to
-          guarantee safe delivery
-        </p>
-        <button class="btn"><p>READ MORE</p></button>
-      </div>
-      <div class="cards">
-        <img src="../assets/img/ourservices/bundling.png" />
-        <h1 class="title">BUNDLING</h1>
-        <p class="descr">
-          You’ve built the perfect bundle for your customers and every detail
-          counts. Bundles will be packed by us according to current
-          specifications as required by Amazon
-        </p>
+      <div class="cards" v-for="(card, index) in cards" :key="index">
+        <img :src="card.img" />
+        <h1 class="title">{{ card.title }}</h1>
+        <p class="descr">{{ card.description }}</p>
         <button class="btn"><p>READ MORE</p></button>
       </div>
     </div>
@@ -46,8 +22,40 @@
 </template>
   
   <script>
+import { ref } from "vue";
+import labeling from "../assets/img/ourservices/labeling.png";
+import bubble from "../assets/img/ourservices/bubble.png";
+import bundling from "../assets/img/ourservices/bundling.png";
 export default {
   name: "ourServicesComponent",
+  setup() {
+    const cards = ref([
+      {
+        id: 1,
+        img: labeling,
+        title: "Labeling",
+        description:
+          "Every unit, carton and pallet will be labeled by us as required. Rest easy knowing your shipments will arrive at their designated fulfillment centers as scheduled and on time",
+      },
+      {
+        id: 2,
+        img: bubble,
+        title: "Bubble Wrap",
+        description:
+          "It’s crucial for inventory to arrive in pristine condition. All items will be carefully bubble wrapped and poly bagged as necessary to guarantee safe delivery",
+      },
+      {
+        id: 3,
+        img: bundling,
+        title: "BUNDLING",
+        description:
+          "You’ve built the perfect bundle for your customers and every detail counts. Bundles will be packed by us according to current specifications as required by Amazon",
+      },
+    ]);
+    return {
+      cards,
+    };
+  },
 };
 </script>
   
