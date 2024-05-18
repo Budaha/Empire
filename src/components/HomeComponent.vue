@@ -81,6 +81,7 @@ export default {
     font-family: "Poppins";
     line-height: 24px;
   }
+  
   &__picture {
     img {
       position: absolute;
