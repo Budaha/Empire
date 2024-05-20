@@ -14,7 +14,7 @@
   <div class="our-services" id="ourservices">
     <ourServicesComponent class="container" />
   </div>
-  <div class="stages" id="stages">
+  <div class="stages">
     <stagesComponent class="container" />
   </div>
   <div class="our-team" id="ourteam">

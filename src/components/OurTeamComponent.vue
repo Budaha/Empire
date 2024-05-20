@@ -14,7 +14,7 @@
         :key="index"
         :class="{
           'ourteam-section__people-item': true,
-          'ourteam-section__people-item--white': people.isWhitePersone
+          'ourteam-section__people-item--white': people.isWhitePersone,
         }"
       >
         <img :src="people.img" />
@@ -143,16 +143,16 @@ export default {
     }
     &--white {
       img {
-      margin-top: 43px;
+        margin-top: 43px;
       }
       .name {
-      color: #313131;
-      margin-top: 22px;
-    }
-    .profession {
-      color: #EF7B3E;
-      margin-top: 7px;
-    }
+        color: #313131;
+        margin-top: 22px;
+      }
+      .profession {
+        color: #ef7b3e;
+        margin-top: 7px;
+      }
     }
   }
 }

@@ -5,19 +5,40 @@
       <img class="image__second" src="../assets/img/nav/secondNav.png" />
     </div>
     <ul class="service">
-      <li @click="scrollBlock('home')">Home</li>
-      <li @click="scrollBlock('aboutus')">About us</li>
-      <li @click="scrollBlock('ourservices')">Our Services</li>
-      <li @click="scrollBlock('ourteam')">Our Team</li>
-      <li @click="scrollBlock('footer')">Contact us</li>
+      <div class="service__nav" v-for="(nav, index) in navs" :key="index">
+        <li @click="scrollBlock(nav.id)">{{ nav.name }}</li>
+      </div>
     </ul>
   </div>
 </template>
 
 <script>
+import { ref } from "vue";
 export default {
   name: "navigationComponent",
   setup() {
+    const navs = ref([
+      {
+        id: "home",
+        name: "Home",
+      },
+      {
+        id: "aboutus",
+        name: "About us",
+      },
+      {
+        id: "ourservices",
+        name: "Our Services",
+      },
+      {
+        id: "ourteam",
+        name: "Our Team",
+      },
+      {
+        id: "footer",
+        name: "Contact us",
+      },
+    ]);
     const scrollBlock = (id) => {
       document.getElementById(id).scrollIntoView({
         behavior: "smooth",
@@ -25,6 +46,7 @@ export default {
       });
     };
     return {
+      navs,
       scrollBlock,
     };
   },
@@ -48,6 +70,11 @@ export default {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  &__nav {
+    &:last-child {
+      margin-right: 117px;
+    }
+  }
   li {
     cursor: pointer;
     padding-top: 23px;
@@ -57,9 +84,6 @@ export default {
     line-height: 27px;
     color: #ffffff;
     font-family: "Poppins";
-    &:last-child {
-      margin-right: 118px;
-    }
   }
   li:hover {
     color: #ef7b3e;

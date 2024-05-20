@@ -13,12 +13,11 @@
       </div>
       <div class="first-block">
         <h1 class="title--1">QUICK LINKS</h1>
-        <ul>
-          <li @click="scrollBlock('home')">Home</li>
-          <li @click="scrollBlock('aboutus')">About us</li>
-          <li @click="scrollBlock('ourservices')">Our Services</li>
-          <li @click="scrollBlock('ourteam')">Our Team</li>
-          <li @click="scrollBlock('footer')">Contact us</li>
+        <ul class="arrow">
+          <div class="arrow--1" v-for="(arrow, index) in arrows" :key="index">
+            <img :src="arrow.img" />
+            <li @click="scrollBlock(arrow.id)">{{ arrow.name }}</li>
+          </div>
         </ul>
       </div>
       <div class="first-block">
@@ -43,6 +42,8 @@
 </template>
 
 <script>
+import { ref } from "vue";
+import arrow from "../assets/img/footer/arrow.png";
 export default {
   name: "footerComponent",
   setup() {
@@ -52,8 +53,36 @@ export default {
         block: "center",
       });
     };
+    const arrows = ref([
+      {
+        id: "home",
+        img: arrow,
+        name: "Home",
+      },
+      {
+        id: "aboutus",
+        img: arrow,
+        name: "About us",
+      },
+      {
+        id: "ourservices",
+        img: arrow,
+        name: "Our Services",
+      },
+      {
+        id: "ourteam",
+        img: arrow,
+        name: "Our Team",
+      },
+      {
+        id: "footer",
+        img: arrow,
+        name: "Contact us",
+      },
+    ]);
     return {
       scrollBlock,
+      arrows,
     };
   },
 };
@@ -70,6 +99,8 @@ export default {
     margin-top: 80px;
     .first-block {
       margin-left: 110px;
+      display: flex;
+      flex-direction: column;
       &:last-child {
         margin-left: 13px;
       }
@@ -80,13 +111,26 @@ export default {
         font-size: 20px;
         margin-top: 20px;
       }
+      .arrow {
+        display: flex;
+        flex-direction: column;
+        margin-top: 14px;
+      }
+      .arrow--1 {
+        display: flex;
+        align-items: center;
+        img {
+          width: 5px;
+          height: 5px;
+        }
+      }
       li {
         font-family: "Poppins";
         font-size: 16px;
         font-weight: 400;
         line-height: 27px;
         color: #ffffff;
-        margin-left: 24px;
+        margin-left: 19px;
         cursor: pointer;
         &:first-child {
           margin-top: 14px;
