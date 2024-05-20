@@ -147,6 +147,9 @@ export default {
         max-width: 230px;
         padding-left: 40px;
       }
+      &:last-child {
+        margin-top: 19px;
+      }
       img {
         pointer-events: none;
       }
@@ -157,6 +160,9 @@ export default {
         color: #000000;
         font-family: "Poppins";
         margin-top: 28px;
+        &:last-child {
+          margin-top: 19px;
+        }
       }
       .descr {
         font-size: 16px;
