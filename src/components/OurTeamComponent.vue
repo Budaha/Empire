@@ -10,9 +10,12 @@
     </div>
     <div class="ourteam-section__people">
       <div
-        class="ourteam-section__people-item"
         v-for="(people, index) in peoples"
         :key="index"
+        :class="{
+          'ourteam-section__people-item': true,
+          'ourteam-section__people-item--white': people.isWhitePersone
+        }"
       >
         <img :src="people.img" />
         <h2 class="name">{{ people.name }}</h2>
@@ -44,18 +47,21 @@ export default {
         img: Larry,
         name: "Larry Stuber",
         profession: "East Coast Account Manager",
+        isWhitePersone: false,
       },
       {
         id: 2,
         img: John,
         name: "John Soos",
         profession: "Chief Operating Officer",
+        isWhitePersone: true,
       },
       {
         id: 3,
         img: Nima,
         name: "Nima Hassanpour",
         profession: "President",
+        isWhitePersone: false,
       },
     ]);
     return {
@@ -114,7 +120,7 @@ export default {
       background: none;
     }
     img {
-      margin-top: 43px;
+      margin-top: 20px;
       pointer-events: none;
     }
     .name {
@@ -124,15 +130,7 @@ export default {
       line-height: 25px;
       color: #ffffff;
       text-transform: uppercase;
-    }
-    .name-second {
-      color: #313131;
-      font-size: 18px;
-      font-weight: 700;
-      font-family: "Poppins";
-      line-height: 25px;
-      text-transform: uppercase;
-      margin-top: 22px;
+      margin-top: -3px;
     }
     .profession {
       font-size: 16px;
@@ -141,15 +139,20 @@ export default {
       line-height: 25px;
       color: #ffffff;
       text-transform: uppercase;
-    }
-    .profession-second {
-      font-size: 16px;
-      font-weight: 500;
-      font-family: "Poppins";
-      line-height: 25px;
-      color: #ef7b3e;
-      text-transform: uppercase;
       margin-top: 7px;
+    }
+    &--white {
+      img {
+      margin-top: 43px;
+      }
+      .name {
+      color: #313131;
+      margin-top: 22px;
+    }
+    .profession {
+      color: #EF7B3E;
+      margin-top: 7px;
+    }
     }
   }
 }
