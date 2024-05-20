@@ -2,7 +2,7 @@
   <div class="footer-section">
     <div class="footer-section__block-grid">
       <div class="first-block">
-        <h1 class="title" @click="scrollBlock('home')">
+        <h1 class="title" @click="scrollBlock('header')">
           <span>LOGO</span> HERE
         </h1>
         <p class="descr">

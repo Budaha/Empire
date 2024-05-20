@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header" id="header">
     <headerComponent class="container" />
   </div>
   <div class="nav">
