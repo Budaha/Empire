@@ -28,13 +28,12 @@ export default {
 .contacts {
   display: flex;
   justify-content: flex-end;
-}
+  max-width: 1440px;
 .address {
   display: flex;
   gap: 8px;
   align-items: center;
   margin-right: 40px;
-  cursor: pointer;
   &__text {
     font-weight: 400;
     font-size: 16px;
@@ -48,7 +47,6 @@ export default {
   gap: 8px;
   align-items: center;
   margin-right: 25px;
-  cursor: pointer;
   &__text {
     font-weight: 400;
     font-size: 16px;
@@ -62,7 +60,6 @@ export default {
   align-items: center;
   margin-right: 40px;
   gap: 8px;
-  cursor: pointer;
   &__text {
     font-weight: 600;
     font-size: 16px;
@@ -74,7 +71,15 @@ export default {
 img {
   width: 15px;
   height: 15px;
+  user-select: none;
+  pointer-events: none;
 }
+p {
+cursor: pointer;
+}
+p:hover {
+    color: #ef7b3e;
+  }
 .btn {
   cursor: pointer;
   width: 161px;
@@ -89,5 +94,9 @@ img {
   font-size: 16px;
   line-height: 10px;
   font-family: "Poppins";
+}
+.btn:hover {
+    background: #515151;
+  }
 }
 </style>

@@ -129,6 +129,9 @@ export default {
     margin-top: 28px;
     cursor: pointer;
   }
+  .btn:hover {
+    background: #515151;
+  }
   &__item {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -152,6 +155,7 @@ export default {
       }
       img {
         pointer-events: none;
+        user-select: none;
       }
       .title {
         font-size: 18px;
@@ -161,8 +165,8 @@ export default {
         font-family: "Poppins";
         margin-top: 28px;
         &:last-child {
-          margin-top: 19px;
-        }
+        margin-top: 19px;
+      }
       }
       .descr {
         font-size: 16px;

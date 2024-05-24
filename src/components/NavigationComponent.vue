@@ -64,6 +64,7 @@ export default {
     position: absolute;
     margin-left: 145px;
     pointer-events: none;
+    user-select: none;
   }
 }
 .service {

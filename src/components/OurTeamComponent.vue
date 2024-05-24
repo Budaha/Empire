@@ -122,6 +122,7 @@ export default {
     img {
       margin-top: 20px;
       pointer-events: none;
+      user-select: none;
     }
     .name {
       font-size: 18px;

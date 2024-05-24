@@ -74,6 +74,7 @@ export default {
     position: relative;
     max-width: 650px;
     pointer-events: none;
+    user-select: none;
     img {
       padding-left: 11px;
     }
@@ -154,6 +155,7 @@ export default {
       }
       img {
         pointer-events: none;
+        user-select: none;
       }
     }
     .text {

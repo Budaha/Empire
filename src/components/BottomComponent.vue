@@ -30,6 +30,8 @@ export default {
       font-weight: 700;
       line-height: 16.8px;
       color: #ffffff;
+      pointer-events: none;
+      user-select: none;
     }
   }
 }

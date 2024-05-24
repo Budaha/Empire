@@ -81,6 +81,9 @@ export default {
     font-family: "Poppins";
     line-height: 24px;
   }
+  button:hover {
+    background: #515151;
+  }
   
   &__picture {
     img {

@@ -71,7 +71,6 @@ export default {
 }
 .our-services {
   background: url(/src/assets/img/ourservices/ourservice.png);
-  z-index: 1;
 }
 .stages {
   background: #ffffff;

@@ -8,6 +8,10 @@ body {
     position: relative;
     max-width: 1440px;
     margin: 0 auto;
+    @media (max-width: 1440px) {
+      padding: 0 40px;
+    }
+
   }
   ul, li {
     list-style: none;

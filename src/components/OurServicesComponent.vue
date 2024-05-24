@@ -61,6 +61,7 @@ export default {
   
   <style lang="scss" scoped>
 .ourservice-section {
+  z-index: 1;
   &__text {
     display: flex;
     flex-direction: column;
@@ -110,6 +111,7 @@ export default {
         margin-top: -111px;
         padding: 14px;
         pointer-events: none;
+        user-select: none;
       }
       .title {
         font-family: "Poppins";
@@ -142,6 +144,9 @@ export default {
           text-underline-offset: 3px;
           text-decoration-thickness: 1px;
           text-decoration-color: #ef7b3e;
+        }
+        p:hover {
+          color: #515151;
         }
       }
     }
