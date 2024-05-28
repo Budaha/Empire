@@ -112,12 +112,22 @@ export default {
     grid-template-columns: repeat(3, 1fr);
     max-width: 1440px;
     margin-top: 80px;
+    @media (max-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+    }
     .first-block {
       margin-left: 110px;
       display: flex;
       flex-direction: column;
       &:last-child {
         margin-left: 13px;
+        @media (max-width: 1024px) {
+          margin-left: 0;
+        }
+      }
+      @media (max-width: 1024px) {
+        margin-left: 0;
       }
       .title--1 {
         text-transform: uppercase;
@@ -159,7 +169,7 @@ export default {
         max-width: 300px;
         cursor: pointer;
         &:first-child {
-          margin-top: 11px;
+          margin-top: 28px;
         }
         img {
           width: 15px;

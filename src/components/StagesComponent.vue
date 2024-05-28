@@ -165,8 +165,8 @@ export default {
         font-family: "Poppins";
         margin-top: 28px;
         &:last-child {
-        margin-top: 19px;
-      }
+          margin-top: 19px;
+        }
       }
       .descr {
         font-size: 16px;

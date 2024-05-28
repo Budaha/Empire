@@ -106,6 +106,10 @@ export default {
     grid-template-columns: repeat(3, 1fr);
     margin-top: 51px;
     gap: 0 7px;
+    @media(max-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+    }
   }
   &__people-item {
     text-align: center;

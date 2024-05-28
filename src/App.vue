@@ -18,13 +18,13 @@
     <stagesComponent class="container" />
   </div>
   <div class="our-team" id="ourteam">
-    <ourTeamComponent class="ourteam" />
+    <ourTeamComponent class="container" />
   </div>
   <div class="footer" id="footer">
-    <footerComponent />
+    <footerComponent class="container" />
   </div>
   <div class="bottom">
-    <bottomComponent />
+    <bottomComponent class="container" />
   </div>
 </template>
 <script>
@@ -59,6 +59,9 @@ export default {
   background: #ffffff;
   padding-top: 8px;
   padding-bottom: 9px;
+  @media (max-width: 1200px) {
+    background: #ef7b3e;
+  }
 }
 .nav {
   background: #313131;

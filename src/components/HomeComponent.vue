@@ -84,7 +84,6 @@ export default {
   button:hover {
     background: #515151;
   }
-  
   &__picture {
     img {
       position: absolute;

@@ -1,8 +1,10 @@
 <template>
   <div class="bottom-section">
-    <div class="bottom-section__grid">
-      <p>Terms & Conditions</p>
-      <p>
+    <div class="bottom-section__item">
+      <p class="left">Terms & Conditions</p>
+    </div>
+    <div class="bottom-section__item">
+      <p class="right">
         Copyright Notice: © 2022 | All Rights Reserved. Empire Prep Services
       </p>
     </div>
@@ -18,12 +20,28 @@ export default {
 <style lang="scss" scoped>
 .bottom-section {
   display: flex;
-  justify-content: center;
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0 285px;
-    margin-top: 13px;
+  justify-content: space-between;
+  padding-top: 14px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  &__item {
+    .left {
+      padding-left: 147px;
+      @media (max-width: 1024px) {
+        padding-left: 15px;
+      }
+    }
+    .right {
+      padding-right: 152px;
+      @media (max-width: 1024px) {
+        padding-right: 15px;
+      }
+      @media (max-width: 768px) {
+        padding-top: 10px;
+      }
+    }
     p {
       font-family: "Lato";
       font-size: 14px;
