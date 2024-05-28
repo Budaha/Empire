@@ -52,6 +52,9 @@ export default {
 };
 </script>
 <style lang="scss">
+.hidden {
+  display: none;
+}
 .header {
   background: #ffffff;
   padding-top: 8px;
@@ -60,6 +63,9 @@ export default {
 .nav {
   background: #313131;
   padding-bottom: 24px;
+  @media (max-width: 1200px) {
+    display: none;
+  }
 }
 .home {
   background: #ef7b3e;

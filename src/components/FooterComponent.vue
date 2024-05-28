@@ -25,15 +25,30 @@
         <ul>
           <div class="flex">
             <img src="../assets/img/header/phone.png" />
-            <li>1 (877) 618-0069</li>
+            <li>
+              <a class="phone__text" href="tel:1 (877) 618-0069"
+                >1 (877) 618-0069</a
+              >
+            </li>
           </div>
           <div class="flex">
             <img src="../assets/img/header/email.png" />
-            <li>info@empireprepservices.com</li>
+            <li>
+              <a class="email__text" href="mailto:info@empireprepservices.com"
+                >info@empireprepservices.com</a
+              >
+            </li>
           </div>
           <div class="flex">
             <img src="../assets/img/header/address.png" />
-            <li>California: 4010 Valley Blvd Ste 108, Walnut, CA 91789</li>
+            <li>
+              <a
+                class="address__text"
+                href="https://www.google.com/maps?ll=34.038973690169456, -117.82229369628088"
+                target="_blank"
+                >California: 4010 Valley Blvd Ste 108, Walnut, CA 91789</a
+              >
+            </li>
           </div>
         </ul>
       </div>
@@ -149,16 +164,22 @@ export default {
         img {
           width: 15px;
           height: 17px;
+          align-items: center;
           &:first-child {
-            margin-top: 20px;
+            margin-top: 10px;
           }
         }
-        li {
+        a {
+          color: #ffffff;
           margin-top: 18px;
           font-family: "Lato";
           font-size: 16px;
-          font-weight: 600;
+          font-weight: 400;
           line-height: 19.2px;
+          text-decoration: none;
+        }
+        a:hover {
+          color: #ef7b3e;
         }
       }
     }

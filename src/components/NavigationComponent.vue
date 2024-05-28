@@ -54,40 +54,49 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.image {
-  position: relative;
-  &__second {
-    padding-top: 10px;
-    padding-left: 21px;
+.navigation {
+  @media (max-width: 1440px) {
+    display: flex;
+    justify-content: space-between;
   }
-  img {
-    position: absolute;
-    margin-left: 145px;
-    pointer-events: none;
-    user-select: none;
-  }
-}
-.service {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  &__nav {
-    &:last-child {
-      margin-right: 117px;
+  .image {
+    position: relative;
+    &__second {
+      padding-top: 10px;
+      padding-left: 21px;
+    }
+    img {
+      position: absolute;
+      margin-left: 145px;
+      pointer-events: none;
+      user-select: none;
+      @media (max-width: 1440px) {
+        margin-left: 100px;
+      }
     }
   }
-  li {
-    cursor: pointer;
-    padding-top: 23px;
-    padding-right: 38px;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 27px;
-    color: #ffffff;
-    font-family: "Poppins";
-  }
-  li:hover {
-    color: #ef7b3e;
+  .service {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    &__nav {
+      &:last-child {
+        margin-right: 117px;
+      }
+    }
+    li {
+      cursor: pointer;
+      padding-top: 23px;
+      padding-right: 38px;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 27px;
+      color: #ffffff;
+      font-family: "Poppins";
+    }
+    li:hover {
+      color: #ef7b3e;
+    }
   }
 }
 </style>

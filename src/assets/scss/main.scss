@@ -3,19 +3,24 @@ body {
   padding: 0;
 }
 .container {
-    width: 100%;
-    flex: 0 0 auto;
-    position: relative;
-    max-width: 1440px;
-    margin: 0 auto;
-    @media (max-width: 1440px) {
-      padding: 0 40px;
-    }
-
-  }
-  ul, li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  h1, h2, h3, h4, h5, h6, p { margin: 0; }
+  width: 100%;
+  flex: 0 0 auto;
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
