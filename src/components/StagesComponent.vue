@@ -141,17 +141,40 @@ export default {
     margin-left: auto;
     margin-right: auto;
     position: relative;
+    @media(max-width: 1200px){
+        gap: 0 20px;
+      }
+      @media(max-width: 500px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
     .el {
       text-align: center;
       z-index: 1;
       max-width: 250px;
       padding-left: 20px;
+      @media(max-width: 1200px){
+        padding-left: 0;
+      }
+      @media(max-width: 500px) {
+        margin-top: 20px;
+      }
       &:first-child {
         max-width: 230px;
         padding-left: 40px;
+        @media(max-width: 1200px){
+        padding-left: 0;
+      }
       }
       &:last-child {
         margin-top: 19px;
+        @media(max-width: 1200px){
+          margin-top: 0;
+        }
+        @media(max-width: 500px) {
+        margin-top: 20px;
+      }
       }
       img {
         pointer-events: none;
@@ -184,16 +207,21 @@ export default {
       z-index: 2;
       position: absolute;
       pointer-events: none;
-      display: none;
       &--1 {
         display: flex;
         left: 217px;
         top: 11px;
+        @media(max-width: 1200px){
+        display: none;
+      }
       }
       &--2 {
         display: flex;
         right: 210px;
         top: 50px;
+        @media(max-width: 1200px){
+        display: none;
+      }
       }
     }
   }

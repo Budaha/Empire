@@ -70,13 +70,24 @@ export default {
 .about-section {
   display: flex;
   padding-top: 108px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
   &__image {
     position: relative;
     max-width: 650px;
     pointer-events: none;
     user-select: none;
+    @media (max-width: 768px) {
+      display: flex;
+      justify-content: center;
+    }
     img {
       padding-left: 11px;
+      @media (max-width: 1200px) {
+        padding-left: 0;
+        max-width: 400px;
+      }
     }
   }
   &__title-img {
@@ -90,6 +101,18 @@ export default {
     font-family: "Poppins";
     line-height: 45px;
     color: #ffffff;
+    @media (max-width: 1200px) {
+      top: 45px;
+      right: 10px;
+      font-size: 24px;
+      line-height: 25px;
+    }
+    @media (max-width: 768px) {
+      right: 134px;
+    }
+    @media (max-width: 500px) {
+      right: 26px;
+    }
   }
   &__text-img {
     p {
@@ -101,10 +124,25 @@ export default {
       font-size: 16px;
       line-height: 25px;
       color: #ffffff;
+      @media (max-width: 1200px) {
+        font-size: 13px;
+        line-height: 20px;
+        top: 113px;
+        right: 34px;
+      }
+      @media (max-width: 768px) {
+      right: 155px;
+    }
+    @media (max-width: 500px) {
+      right: 47px;
+    }
     }
   }
   &__info {
     margin-left: 85px;
+    @media (max-width: 1200px) {
+      margin-left: 20px;
+    }
     .line {
       width: 46px;
       border-bottom: 2px solid #ef7b3e;
@@ -112,6 +150,10 @@ export default {
     }
     .block-name {
       display: flex;
+      @media (max-width: 768px) {
+        justify-content: center;
+        padding-top: 30px;
+      }
     }
     .name {
       font-weight: 700;

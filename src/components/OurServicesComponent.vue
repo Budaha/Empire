@@ -94,6 +94,11 @@ export default {
   }
   &__service {
     display: flex;
+    @media(max-width: 1200px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
     .cards {
       max-width: 362px;
       height: 374px;
@@ -104,8 +109,14 @@ export default {
       flex-direction: column;
       margin-left: 28px;
       box-shadow: 0px 0px 35px 15px #0000001a;
+      @media(max-width: 1200px) {
+          margin-left: 0;
+        }
       &:first-child {
         margin-left: 147px;
+        @media(max-width: 1200px) {
+          margin-left: 0;
+        }
       }
       img {
         margin-top: -111px;

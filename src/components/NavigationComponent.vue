@@ -55,10 +55,8 @@ export default {
 
 <style lang="scss" scoped>
 .navigation {
-  @media (max-width: 1440px) {
-    display: flex;
-    justify-content: space-between;
-  }
+  display: flex;
+  justify-content: space-between;
   .image {
     position: relative;
     &__second {
@@ -71,7 +69,7 @@ export default {
       pointer-events: none;
       user-select: none;
       @media (max-width: 1440px) {
-        margin-left: 100px;
+        margin-left: 0;
       }
     }
   }
@@ -82,6 +80,9 @@ export default {
     &__nav {
       &:last-child {
         margin-right: 117px;
+        @media (max-width: 1440px) {
+          margin-right: 0;
+        }
       }
     }
     li {

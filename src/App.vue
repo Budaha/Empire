@@ -73,6 +73,9 @@ export default {
 .home {
   background: #ef7b3e;
   padding-bottom: 172px;
+  @media(max-width: 1440px) {
+    padding-bottom: 0;
+  }
 }
 .aboutus {
   background: #ffffff;
